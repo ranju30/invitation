@@ -19,15 +19,18 @@ public class Person {
     }
 
     public String generatePrefix() {
-        return this.gender == "male" ? "Mr " : "Ms ";
+        return this.gender.equals("male") ? "Mr " : "Ms ";
     }
 
-    public int getAge(){
+    public int getAge() {
         return this.age;
     }
 
-    public String getAddress(){
+    public String getAddress() {
         return this.address[0];
     }
 
+    public String makeAddressing() {
+        return generatePrefix() + getName();
+    }
 }
