@@ -8,7 +8,11 @@ public class Name {
         this.lastName = lName;
     }
 
-    public String getName() {
+    public String getFirstLastName() {
         return this.firstName + " " + this.lastName;
-    };
+    }
+
+    public String getLastFirstName(){
+        return this.lastName + ", " + this.firstName;
+    }
 }

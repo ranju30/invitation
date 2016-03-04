@@ -1,52 +1,28 @@
 public class Person {
 
-    private String firstName;
-    private String lastName;
-    private String gender;
-    private int age;
-    private String city;
-    private String state;
-    private String country;
+    private Name name;
+    private Gender gender;
+    private Address address;
 
-    public Person(String firstName, String lastName, String gender, int age, String city, String state, String country) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Person(String firstName, String lastName, Gender gender, String age, String city, String state, String country) {
+        this.name = new Name(firstName,lastName);
         this.gender = gender;
-        this.age = age;
-        this.city = city;
-        this.state = state;
-        this.country = country;
+        this.address = new Address(city,state,country);
     }
 
-    public String getName() {
-        return firstName + " " + lastName;
+    public String getTitleAndFirstNameFirst() {
+        return gender.title() + " " + name.getFirstLastName();
     }
 
-    public int getAge() {
-        return this.age;
+    public String getTitleAndLastNameFirst() {
+        return gender.title() + " " + name.getLastFirstName();
     }
 
-    public String getCity() {
-        return this.city;
+    public String getFirstNameFirstAndCountry(){
+        return this.getTitleAndFirstNameFirst() + ", " +address.getCountry();
     }
 
-    public String getState() {
-        return this.state;
-    }
-
-    public String getCountry() {
-        return this.country;
-    }
-
-    public String generatePrefix() {
-        return this.gender.equals("male") ? "Mr " : "Ms ";
-    }
-
-    public String makeAddressing() {
-        return generatePrefix() + getName();
-    }
-
-    public String getNameAndCountry() {
-        return makeAddressing() + "," + getCountry();
+    public String getLastNameFirstAndCountry() {
+        return this.getTitleAndLastNameFirst() + ", " +address.getCountry();
     }
 }
