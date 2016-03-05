@@ -5,9 +5,9 @@ public class Person {
     private Address address;
 
     public Person(String firstName, String lastName, Gender gender, String age, String city, String state, String country) {
-        this.name = new Name(firstName,lastName);
+        this.name = new Name(firstName, lastName);
         this.gender = gender;
-        this.address = new Address(city,state,country);
+        this.address = new Address(city, state, country);
     }
 
     public String getTitleAndFirstNameFirst() {
@@ -18,11 +18,11 @@ public class Person {
         return gender.title() + " " + name.getLastFirstName();
     }
 
-    public String getFirstNameFirstAndCountry(){
-        return this.getTitleAndFirstNameFirst() + ", " +address.getCountry();
+    public String getFirstNameFirstAndCountry() {
+        return this.getTitleAndFirstNameFirst() + ", " + address.getCountry();
     }
 
     public String getLastNameFirstAndCountry() {
-        return this.getTitleAndLastNameFirst() + ", " +address.getCountry();
+        return this.getTitleAndLastNameFirst() + ", " + address.getCountry();
     }
 }
