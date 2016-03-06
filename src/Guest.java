@@ -1,10 +1,10 @@
-public class Person {
+public class Guest {
 
     private Name name;
     private Gender gender;
     private Address address;
 
-    public Person(String firstName, String lastName, Gender gender, String age, String city, String state, String country) {
+    public Guest(String firstName, String lastName, Gender gender, String age, String city, String state, String country) {
         this.name = new Name(firstName, lastName);
         this.gender = gender;
         this.address = new Address(city, state, country);

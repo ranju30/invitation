@@ -17,8 +17,8 @@ public class FormalGreeting {
             String[] array = line.split(",");
             Gender g = array[2].contains("Female") ? Gender.Female : Gender.Male;
             if (array[6].contains(countryName)) {
-                Person eachPerson = new Person(array[0], array[1], g, array[3], array[4], array[5], array[6]);
-                System.out.println(eachPerson.getLastNameFirstAndCountry());
+                Guest eachGuest = new Guest(array[0], array[1], g, array[3], array[4], array[5], array[6]);
+                System.out.println(eachGuest.getLastNameFirstAndCountry());
             }
         }
     }
