@@ -3,7 +3,7 @@ public class Name {
     private String firstName;
     private String lastName;
 
-    public Name(String fName, String lName){
+    public Name(String fName, String lName) {
         this.firstName = fName;
         this.lastName = lName;
     }
@@ -12,7 +12,7 @@ public class Name {
         return this.firstName + " " + this.lastName;
     }
 
-    public String getLastFirstName(){
+    public String getLastFirstName() {
         return this.lastName + ", " + this.firstName;
     }
 }

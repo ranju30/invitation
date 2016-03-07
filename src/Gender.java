@@ -1,17 +1,16 @@
 public enum Gender {
-    Male {
-        @Override
-        public String title(){
-            return "Mr";
-        }
-    },
-    Female {
-        @Override
-        public String title(){
-            return "Ms";
-        }
-    };
-    public String title(){
-        return "";
+    Male("Mr"),
+    Female("Ms");
+
+    private String prefix;
+
+
+    Gender(String pre) {
+        this.prefix = pre;
+    }
+
+    @Override
+    public String toString() {
+        return prefix;
     }
 }

@@ -11,7 +11,7 @@ public class ReadFile {
         this.fileName = fileName;
     }
 
-    public List<String> getList(){
+    public List<String> getList() {
         File file = new File(this.fileName);
         List<String> lines = null;
         try {

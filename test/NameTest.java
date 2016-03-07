@@ -7,13 +7,13 @@ public class NameTest {
     public void test_name_will_give_firstName_and_lastName() throws Exception {
         Name ranju = new Name("Ranju", "Karmakar");
         String name = ranju.getFirstLastName();
-        assertEquals("Ranju Karmakar",name);
+        assertEquals("Ranju Karmakar", name);
     }
 
     @Test
     public void test_name_will_give_lastName_and_firstName() throws Exception {
         Name ranju = new Name("Ranju", "Karmakar");
         String name = ranju.getLastFirstName();
-        assertEquals("Karmakar, Ranju",name);
+        assertEquals("Karmakar, Ranju", name);
     }
 }

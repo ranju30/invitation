@@ -13,11 +13,11 @@ public class Guest {
     }
 
     public String getTitleAndFirstNameFirst() {
-        return gender.title() + " " + name.getFirstLastName();
+        return gender + " " + name.getFirstLastName();
     }
 
     public String getTitleAndLastNameFirst() {
-        return gender.title() + " " + name.getLastFirstName();
+        return gender + " " + name.getLastFirstName();
     }
 
     public String getFirstNameFirstAndCountry() {
@@ -28,12 +28,12 @@ public class Guest {
         return this.getTitleAndLastNameFirst() + ", " + address.getCountry();
     }
 
-    public String getInformalLegalAgedGuest(){
-        return getFirstNameFirstAndCountry() + ", " +age.getAge();
+    public String getInformalLegalAgedGuest() {
+        return getFirstNameFirstAndCountry() + ", " + age.getAge();
     }
 
-    public String getFormalLegaledGuest() {
-        return getLastNameFirstAndCountry() + ", "+age.getAge();
+    public String getFormalLegalGuest() {
+        return getLastNameFirstAndCountry() + ", " + age.getAge();
 
     }
 }
