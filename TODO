@@ -1,21 +1,33 @@
-Library to print labels(Representation of record) on Invitation Covers
+build a library that prints label(representation of record) on Invitation cover.
 
-Given list of records from a file:-
-    Input Format:
-        firstName,lastName,gender,age,city,state,country
+given list of records in a file.
+input format:-
+firstName,lastName,gender,age,city,state,country
 
-Usages:-
-    Mr/Ms First Last
-    Mr/Ms Last, First
+Output:-
+a. Mr/Ms First Last,Country_name,age
+b. Mr/Ms Last, First,country_name,age
+prefix
+male - Mr
+female - Ms
 
-    Prefix:-
-        Gender
-            Male - Mr
-            Female - Ms
+age
+    legal if > 20
+    illegal if < 20
+-------------------------------------------------------------
 
---------------------------------------------------------------------------
+$ cat records.txt
+Manisha, Roy, Female, 19, Kolkata, WB, India
+Ranju, Karmakar, Male, 22, Bangalore, Karnataka, India
 
-$echo "Ranju,Karmakar,Male,22,Hooghly,WB,Kolkata" > sample.csv
+$ sh run.sh informalPrintLabel records.csv India legal
+Mr Ranju Karmakar,India,22
 
 
+recognising Guest as an entity :
+firstName,lastName,gender,age,city,state,country
 
+Reading guest records from the file
+getting guest labels
+------------------------------------------------
+Task list :

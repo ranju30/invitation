@@ -2,11 +2,13 @@ public class Guest {
 
     private Name name;
     private Gender gender;
+    private Age age;
     private Address address;
 
     public Guest(String firstName, String lastName, Gender gender, String age, String city, String state, String country) {
         this.name = new Name(firstName, lastName);
         this.gender = gender;
+        this.age = new Age(age);
         this.address = new Address(city, state, country);
     }
 
@@ -24,5 +26,14 @@ public class Guest {
 
     public String getLastNameFirstAndCountry() {
         return this.getTitleAndLastNameFirst() + ", " + address.getCountry();
+    }
+
+    public String getInformalLegalAgedGuest(){
+        return getFirstNameFirstAndCountry() + ", " +age.getAge();
+    }
+
+    public String getFormalLegaledGuest() {
+        return getLastNameFirstAndCountry() + ", "+age.getAge();
+
     }
 }
