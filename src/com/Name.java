@@ -1,3 +1,5 @@
+package com;
+
 public class Name {
 
     private String firstName;
@@ -9,10 +11,10 @@ public class Name {
     }
 
     public String getFirstLastName() {
-        return this.firstName + " " + this.lastName;
+        return String.format("%s %s",this.firstName,this.lastName);
     }
 
     public String getLastFirstName() {
-        return this.lastName + ", " + this.firstName;
+        return String.format("%s, %s",this.lastName,this.firstName);
     }
 }

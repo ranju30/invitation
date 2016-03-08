@@ -1,3 +1,5 @@
+package com;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -11,14 +13,10 @@ public class ReadFile {
         this.fileName = fileName;
     }
 
-    public List<String> getList() {
+    public List<String> getList() throws IOException {
         File file = new File(this.fileName);
-        List<String> lines = null;
-        try {
-            lines = Files.readAllLines(file.toPath(), Charset.defaultCharset());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        List<String> lines;
+        lines = Files.readAllLines(file.toPath(), Charset.defaultCharset());
         return lines;
     }
 }

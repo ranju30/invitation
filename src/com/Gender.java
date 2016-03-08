@@ -1,6 +1,8 @@
+package com;
+
 public enum Gender {
-    Male("Mr"),
-    Female("Ms");
+    MALE("Mr"),
+    FEMALE("Ms");
 
     private String prefix;
 
