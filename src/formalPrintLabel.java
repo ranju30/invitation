@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class formalPrintLabel {
+public class FormalPrintLabel {
 
     public static void main(String[] args) {
         FormalGreeting formalGreeting = new FormalGreeting(args);

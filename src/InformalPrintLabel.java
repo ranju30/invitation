@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class informalPrintLabel {
+public class InformalPrintLabel {
     public static void main(String[] args) {
         InformalGreeting informalGreeting = new InformalGreeting(args);
         ArrayList<String> informalRepresentation = informalGreeting.getInformalRepresentation();
