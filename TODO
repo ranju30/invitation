@@ -16,11 +16,11 @@ age
     illegal if < 20
 -------------------------------------------------------------
 
-$ cat records.txt
+$ cat records.csv
 Manisha, Roy, Female, 19, Kolkata, WB, India
 Ranju, Karmakar, Male, 22, Bangalore, Karnataka, India
 
-$ sh run.sh informalPrintLabel records.csv India legal
+$ sh run.sh informalPrintLabel records.csv India 20
 Mr Ranju Karmakar,India,22
 
 

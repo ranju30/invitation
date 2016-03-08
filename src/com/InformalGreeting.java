@@ -16,17 +16,6 @@ public class InformalGreeting {
     }
 
 
-    private Guest getEachGuest(String[] array) {
-        Name name = new Name(array[0], array[1]);
-        Gender g = array[2].contains("Female") ? Gender.FEMALE : Gender.MALE;
-        Age age = new Age(array[3]);
-        City city = new City(array[4]);
-        State state = new State(array[5]);
-        Country country = new Country(array[6]);
-        Address address = new Address(city, state, country);
-        return new Guest(name, g, age, address);
-    }
-
     private ArrayList<String> getAllDetail(List<String> lines) {
         ArrayList<String> list = new ArrayList<String>();
         for (String line : lines) {
@@ -34,7 +23,8 @@ public class InformalGreeting {
             Age age = new Age(array[3]);
             Country country = new Country(array[6]);
             if (country.isEqual(countryName) && age.isLegal(ageLimit)) {
-                Guest eachGuest = getEachGuest(array);
+                GuestGenerator guestGenerator = new GuestGenerator();
+                Guest eachGuest = guestGenerator.getEachGuest(array);
                 list.add(eachGuest.getInformalLegalAgedGuest());
             }
         }
