@@ -24,8 +24,7 @@ public class InformalGreeting {
         State state = new State(array[5]);
         Country country = new Country(array[6]);
         Address address = new Address(city, state, country);
-        Guest eachGuest = new Guest(name, g, age, address);
-        return eachGuest;
+        return new Guest(name, g, age, address);
     }
 
     private ArrayList<String> getAllDetail(List<String> lines) {
