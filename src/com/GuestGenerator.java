@@ -1,6 +1,7 @@
 package com;
 
 public class GuestGenerator {
+
     public Guest getEachGuest(String[] array){
         Name name = new Name(array[0],array[1]);
         Gender g = array[2].contains("Female") ? Gender.FEMALE : Gender.MALE;

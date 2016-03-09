@@ -31,8 +31,8 @@ public class FormalGreeting {
     }
 
     public ArrayList<String> getFormalRepresentation() throws IOException {
-        ReadFile readFile = new ReadFile(fileName);
-        List<String> lines = readFile.getList();
+        ReadFile readFile = new ReadFile();
+        List<String> lines = readFile.getList(fileName);
         return getAllDetail(lines);
     }
 }

@@ -32,8 +32,8 @@ public class InformalGreeting {
     }
 
     public ArrayList<String> getInformalRepresentation() throws IOException {
-        ReadFile readFile = new ReadFile(fileName);
-        List<String> lines = readFile.getList();
+        ReadFile readFile = new ReadFile();
+        List<String> lines = readFile.getList(fileName);
         return getAllDetail(lines);
     }
 }
