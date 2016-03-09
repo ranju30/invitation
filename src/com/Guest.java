@@ -14,28 +14,12 @@ public class Guest {
         this.address = address;
     }
 
-    public String getTitleAndFirstNameFirst() {
-        return String.format("%s %s", gender, name.getFirstLastName());
+    public String getInformalTemplate() {
+        return String.format("%s %s, %s, %s",gender,name.getFirstNameFirst(),address.getCountry(),age.getAge());
     }
 
-    public String getTitleAndLastNameFirst() {
-        return String.format("%s %s", gender, name.getLastFirstName());
-    }
-
-    public String getFirstNameFirstAndCountry() {
-        return String.format("%s, %s", this.getTitleAndFirstNameFirst(), address.getCountry());
-    }
-
-    public String getLastNameFirstAndCountry() {
-        return String.format("%s, %s", this.getTitleAndLastNameFirst(), address.getCountry());
-    }
-
-    public String getInformalLegalAgedGuest() {
-        return String.format("%s, %s", getFirstNameFirstAndCountry(), age.getAge());
-    }
-
-    public String getFormalLegalGuest() {
-        return String.format("%s, %s", getLastNameFirstAndCountry(), age.getAge());
+    public String getFormalTemplate() {
+        return String.format("%s %s, %s, %s",gender,name.getLastNameFirst(),address.getCountry(),age.getAge());
     }
     public boolean isFrom(String countryName){
         return address.isEqualWith(countryName);

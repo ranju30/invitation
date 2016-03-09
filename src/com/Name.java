@@ -10,11 +10,11 @@ public class Name {
         this.lastName = lName;
     }
 
-    public String getFirstLastName() {
+    public String getFirstNameFirst() {
         return String.format("%s %s",this.firstName,this.lastName);
     }
 
-    public String getLastFirstName() {
+    public String getLastNameFirst() {
         return String.format("%s, %s",this.lastName,this.firstName);
     }
 }

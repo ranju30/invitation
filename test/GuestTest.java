@@ -2,6 +2,8 @@ import com.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 
 public class GuestTest {
@@ -10,7 +12,7 @@ public class GuestTest {
 
     @Before
     public void setUp() throws Exception {
-        Name name = new Name("Ranju", "Karmakar");
+        Name name = new Name("Rito", "Kumar");
         Gender g = Gender.MALE;
         Age age = new Age(22);
         City city = new City("Kolkata");
@@ -20,34 +22,27 @@ public class GuestTest {
         ranju = new Guest(name, g, age, address);
     }
 
+
     @Test
-    public void test_getName_will_give_the_name_of_the_person() throws Exception {
-        String name = ranju.getTitleAndFirstNameFirst();
-        assertEquals(name, "Mr Ranju Karmakar");
+    public void testGetFormalLegalGuest() throws Exception {
+        assertEquals("Mr Kumar, Rito, India, 22", ranju.getFormalTemplate());
     }
 
     @Test
-    public void test_to_get_age_of_a_given_detail() throws Exception {
-        assertEquals("Mr Karmakar, Ranju", ranju.getTitleAndLastNameFirst());
+    public void testGetInformalLegalGuest() throws Exception {
+        assertEquals("Mr Rito Kumar, India, 22",ranju.getInformalTemplate());
     }
 
     @Test
-    public void test_to_get_with_country_name_and_first_name() throws Exception {
-        assertEquals("Mr Ranju Karmakar, India", ranju.getFirstNameFirstAndCountry());
+    public void testToCheckAPersonIsFromACountry() throws Exception {
+        assertTrue(ranju.isFrom("India"));
+        assertFalse(ranju.isFrom("Pakistan"));
     }
 
     @Test
-    public void test_to_get_with_country_name_and_last_name() throws Exception {
-        assertEquals("Mr Karmakar, Ranju, India", ranju.getLastNameFirstAndCountry());
-    }
+    public void testWheatherAgivenAgeIsLegalAccordingToCondition() throws Exception {
+        assertTrue(ranju.isLegalAge(20));
+        assertFalse(ranju.isLegalAge(25));
 
-    @Test
-    public void testGetInformalLegalAgedGuest() throws Exception {
-        assertEquals("Mr Ranju Karmakar, India, 22", ranju.getInformalLegalAgedGuest());
-    }
-
-    @Test
-    public void testGetFormalLegaledGuest() throws Exception {
-        assertEquals("Mr Karmakar, Ranju, India, 22", ranju.getFormalLegalGuest());
     }
 }

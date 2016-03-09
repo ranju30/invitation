@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.ReadFile.getList;
+
 public class ArgumentHandler {
     private String format;
     private String fileName;
@@ -18,13 +20,12 @@ public class ArgumentHandler {
     }
 
     private ArrayList<String> getData() throws IOException {
-        ReadFile readFile = new ReadFile();
-        List<String> list = readFile.getList(fileName);
+        List<String> list = getList(fileName);
         return (ArrayList<String>) list;
     }
 
     private ArrayList<Guest> createGuest() throws IOException {
-        ArrayList<Guest> list = new ArrayList<Guest>();
+        ArrayList<Guest> list = new ArrayList<>();
         ArrayList<String> data = getData();
         for (String eachData : data) {
             String[] array = eachData.split(",");
@@ -36,7 +37,7 @@ public class ArgumentHandler {
 
     private ArrayList<Guest> filterAsCondition() throws IOException {
         ArrayList<Guest> guests = createGuest();
-        ArrayList<Guest> list = new ArrayList<Guest>();
+        ArrayList<Guest> list = new ArrayList<>();
         for (Guest guest: guests) {
             if(guest.isFrom(countryName) && guest.isLegalAge(Integer.parseInt(ageLimit))){
                 list.add(guest);
@@ -50,12 +51,12 @@ public class ArgumentHandler {
         ArrayList<String> list = new ArrayList<>();
         if(format.equals("firstNameFirst")){
             for (Guest guest:guests) {
-                list.add(guest.getInformalLegalAgedGuest());
+                list.add(guest.getInformalTemplate());
             }
         }
         else if(format.equals("lastNameFirst")){
             for (Guest guest:guests) {
-                list.add(guest.getFormalLegalGuest());
+                list.add(guest.getFormalTemplate());
             }
         }
         return list;

@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class AddressTest {
 
@@ -22,5 +23,11 @@ public class AddressTest {
     @Test
     public void test_from_address_for_getCountry() throws Exception {
         assertEquals("India", address.getCountry());
+    }
+
+    @Test
+    public void test_to_check_wheather_a_country_is_equal_or_not() throws Exception {
+        assertTrue(address.isEqualWith("India"));
+
     }
 }
