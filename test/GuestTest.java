@@ -12,7 +12,7 @@ public class GuestTest {
     public void setUp() throws Exception {
         Name name = new Name("Ranju", "Karmakar");
         Gender g = Gender.MALE;
-        Age age = new Age("22");
+        Age age = new Age(22);
         City city = new City("Kolkata");
         State state = new State("WB");
         Country country = new Country("India");

@@ -7,8 +7,8 @@ public enum Gender {
     private String prefix;
 
 
-    Gender(String pre) {
-        this.prefix = pre;
+    Gender(String prefix) {
+        this.prefix = prefix;
     }
 
     @Override

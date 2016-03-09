@@ -1,16 +1,17 @@
 package com;
 
 public class Age {
-    private String age;
+    private int age;
 
-    public Age(String age){
+    public Age(int age){
         this.age = age;
     }
-    public boolean isLegal(String age){
-        return Integer.parseInt(this.age) > Integer.parseInt(age);
+
+    public boolean isLegal(int givenAge){
+        return this.age > givenAge;
     }
 
     public int getAge() {
-        return Integer.parseInt(this.age);
+        return this.age;
     }
 }

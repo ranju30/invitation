@@ -7,7 +7,7 @@ public class Guest {
     private Age age;
     private Address address;
 
-    public Guest(Name name, Gender gender,Age age,Address address) {
+    public Guest(Name name, Gender gender, Age age, Address address) {
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -31,10 +31,16 @@ public class Guest {
     }
 
     public String getInformalLegalAgedGuest() {
-        return String.format("%s, %s",getFirstNameFirstAndCountry(),age.getAge());
+        return String.format("%s, %s", getFirstNameFirstAndCountry(), age.getAge());
     }
 
     public String getFormalLegalGuest() {
-        return String.format("%s, %s",getLastNameFirstAndCountry(),age.getAge());
+        return String.format("%s, %s", getLastNameFirstAndCountry(), age.getAge());
+    }
+    public boolean isFrom(String countryName){
+        return address.isEqualWith(countryName);
+    }
+    public boolean isLegalAge(int givenAge){
+        return age.isLegal(givenAge);
     }
 }

@@ -1,4 +1,3 @@
-import com.InformalGreeting;
 import org.junit.Test;
 
 import java.util.ArrayList;
