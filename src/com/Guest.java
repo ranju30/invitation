@@ -15,16 +15,34 @@ public class Guest {
     }
 
     public String getInformalTemplate() {
-        return String.format("%s %s, %s, %s",gender,name.getFirstNameFirst(),address.getCountry(),age.getAge());
+        return String.format("%s %s, %s, %s", gender, name.getFirstNameFirst(), address.getCountry(), age.getAge());
     }
 
     public String getFormalTemplate() {
-        return String.format("%s %s, %s, %s",gender,name.getLastNameFirst(),address.getCountry(),age.getAge());
+        return String.format("%s %s, %s, %s", gender, name.getLastNameFirst(), address.getCountry(), age.getAge());
     }
-    public boolean isFrom(String countryName){
+
+    public boolean isFrom(String countryName) {
         return address.isEqualWith(countryName);
     }
-    public boolean isLegalAge(int givenAge){
+
+    public boolean isLegalAge(int givenAge) {
         return age.isLegal(givenAge);
+    }
+
+    public String getFormalNameTemplate() {
+        return String.format("%s %s", gender, name.getLastNameFirst());
+    }
+
+    public String getInformalNameTemplate() {
+        return String.format("%s %s", gender, name.getFirstNameFirst());
+    }
+
+    public String getFormalNameCountryTemplate() {
+        return String.format("%s %s, %s", gender, name.getLastNameFirst(), address.getCountry());
+    }
+
+    public String getInformalNameAndCountryTemplate() {
+        return String.format("%s %s, %s", gender, name.getFirstNameFirst(), address.getCountry());
     }
 }

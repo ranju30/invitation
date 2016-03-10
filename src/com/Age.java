@@ -3,11 +3,11 @@ package com;
 public class Age {
     private int age;
 
-    public Age(int age){
+    public Age(int age) {
         this.age = age;
     }
 
-    public boolean isLegal(int givenAge){
+    public boolean isLegal(int givenAge) {
         return this.age > givenAge;
     }
 

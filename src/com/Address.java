@@ -15,7 +15,7 @@ public class Address {
         return country.getName();
     }
 
-    public Boolean isEqualWith(String anotherCountry){
+    public Boolean isEqualWith(String anotherCountry) {
         return country.isEqual(anotherCountry);
     }
 }
