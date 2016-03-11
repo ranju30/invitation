@@ -90,4 +90,19 @@ public class OperateData {
         }
         return list;
     }
+
+    public ArrayList<String> getRepresentationTemplate(String format, String fileName, String countryName) throws IOException {
+        ArrayList<Guest> guests = filterAsCountryName(fileName,countryName);
+        ArrayList<String> list = new ArrayList<>();
+        if (format.equals("firstNameFirst")) {
+            for (Guest guest : guests) {
+                list.add(guest.getInformalNameAndCountryTemplate());
+            }
+        } else if (format.equals("lastNameFirst")) {
+            for (Guest guest : guests) {
+                list.add(guest.getFormalStructure());
+            }
+        }
+        return list;
+    }
 }

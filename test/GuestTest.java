@@ -8,7 +8,7 @@ import static junit.framework.TestCase.assertEquals;
 
 public class GuestTest {
 
-    private Guest ranju;
+    private Guest rito;
 
     @Before
     public void setUp() throws Exception {
@@ -19,30 +19,48 @@ public class GuestTest {
         State state = new State("WB");
         Country country = new Country("India");
         Address address = new Address(city,state,country);
-        ranju = new Guest(name, g, age, address);
+        rito = new Guest(name, g, age, address);
     }
 
 
     @Test
     public void testGetFormalLegalGuest() throws Exception {
-        assertEquals("Mr Kumar, Rito, India, 22", ranju.getFormalTemplate());
+        assertEquals("Mr Kumar, Rito, India, 22", rito.getFormalTemplate());
     }
 
     @Test
     public void testGetInformalLegalGuest() throws Exception {
-        assertEquals("Mr Rito Kumar, India, 22",ranju.getInformalTemplate());
+        assertEquals("Mr Rito Kumar, India, 22",rito.getInformalTemplate());
     }
 
     @Test
     public void testToCheckAPersonIsFromACountry() throws Exception {
-        assertTrue(ranju.isFrom("India"));
-        assertFalse(ranju.isFrom("Pakistan"));
+        assertTrue(rito.isFrom("India"));
+        assertFalse(rito.isFrom("Pakistan"));
     }
 
     @Test
     public void testWheatherAgivenAgeIsLegalAccordingToCondition() throws Exception {
-        assertTrue(ranju.isLegalAge(20));
-        assertFalse(ranju.isLegalAge(25));
+        assertTrue(rito.isLegalAge(20));
+        assertFalse(rito.isLegalAge(25));
+    }
 
+    @Test
+    public void test_getFormalNameTemplate() throws Exception {
+        assertEquals("Mr Kumar, Rito",rito.getFormalNameTemplate());
+    }
+
+    @Test
+    public void test_getInformalNameTemplate() throws Exception {
+        assertEquals("Mr Rito Kumar",rito.getInformalNameTemplate());
+    }
+
+    @Test
+    public void testgetFormalNameCountryTemplate() throws Exception {
+        assertEquals("Mr Kumar, Rito, India",rito.getFormalNameCountryTemplate());
+    }
+    @Test
+    public void testgetInformalNameCountryTemplate() throws Exception {
+        assertEquals("Mr Rito Kumar, India",rito.getInformalNameAndCountryTemplate());
     }
 }

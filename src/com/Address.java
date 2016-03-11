@@ -18,4 +18,12 @@ public class Address {
     public Boolean isEqualWith(String anotherCountry) {
         return country.isEqual(anotherCountry);
     }
+
+    public String getCity() {
+        return city.getName();
+    }
+
+    public String getState() {
+        return state.getName();
+    }
 }

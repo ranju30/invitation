@@ -6,4 +6,8 @@ public class State {
     public State(String state) {
         this.state = state;
     }
+
+    public String getName() {
+        return state;
+    }
 }

@@ -6,6 +6,7 @@ public class Guest {
     private Gender gender;
     private Age age;
     private Address address;
+    private int dashLength = 30;
 
     public Guest(Name name, Gender gender, Age age, Address address) {
         this.name = name;
@@ -44,5 +45,35 @@ public class Guest {
 
     public String getInformalNameAndCountryTemplate() {
         return String.format("%s %s, %s", gender, name.getFirstNameFirst(), address.getCountry());
+    }
+
+    public String getFormalStructure(){
+        int nameLenght = name.getFirstNameFirst().length()+5;
+        int addressLength = address.getCity().length()+address.getState().length() +4;
+        dashLength = nameLenght > addressLength ? nameLenght : addressLength;
+        String s = "";
+        s += getDash("+") + "\n";
+        s += "| " + gender + " " + name.getFirstNameFirst() +getSpace(nameLenght)+ " |" + "\n";
+        s += getDash("|") + "\n";
+        s += "| " + address.getCity() + ", " + address.getState() + getSpace(addressLength)+" |" + "\n";
+        s += "| " +address.getCountry() + getSpace(address.getCountry().length()+1) +"|" + "\n";
+        s += getDash("+");
+        return s;
+    }
+
+    private String getSpace(int n){
+        String space = "";
+        for(int i=0;i<dashLength-n;i++){
+            space += " ";
+        }
+        return space;
+    }
+
+    private String getDash(String symbol){
+        String dash = symbol;
+        for (int i=0;i<dashLength;i++){
+            dash += "-";
+        }
+        return dash+symbol;
     }
 }

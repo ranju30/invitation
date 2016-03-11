@@ -5,15 +5,15 @@ import java.util.ArrayList;
 
 public class ArgumentHandler {
     private String[] arguments;
-    private String format;
     private String fileName;
+    private String format;
     private String countryName;
     private String ageLimit;
 
     public ArgumentHandler(String[] args) {
         this.arguments = args;
-        this.format = args[0];
-        this.fileName = args[1];
+        this.fileName = args[0];
+        this.format = args[1];
     }
 
 
@@ -21,7 +21,7 @@ public class ArgumentHandler {
         OperateData operateData = new OperateData();
         if(arguments.length == 3){
             this.countryName = arguments[2];
-            return operateData.getRepresentationWithCountryName(format,fileName,countryName);
+            return operateData.getRepresentationTemplate(format,fileName,countryName);
         }
         else if(arguments.length == 4){
             this.countryName = arguments[2];
