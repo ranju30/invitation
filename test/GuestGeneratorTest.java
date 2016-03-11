@@ -1,5 +1,5 @@
 import guest.Guest;
-import com.GuestGenerator;
+import guest.GuestGenerator;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

@@ -1,4 +1,4 @@
-import com.ArgumentHandler;
+import option.ArgumentHandler;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class ArgumentHandlerTest {
 
     @Test
     public void testGetRepresentationShouldReturnRepresentationIfCountryIsGiven() throws Exception {
-        ArgumentHandler argumentHandler = new ArgumentHandler(new String[]{"./data/sample.csv", "lastNameFirst","India"});
+        ArgumentHandler argumentHandler = new ArgumentHandler(new String[]{"./data/sample.csv", "lastNameFirstWithPattern","India"});
         ArrayList<String> representation = argumentHandler.getRepresentation();
         assertEquals("+---------------+\n| Mr Rito Kumar |\n|---------------|\n| Hooghly, WB   |\n| India         |\n+---------------+", representation.get(0));
     }

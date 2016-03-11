@@ -1,16 +1,15 @@
-package com;
+package option;
 
 import guest.Guest;
+import guest.GuestGenerator;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.ReadFile.getList;
-
 public class OperateData {
     public ArrayList<String> getData(String fileName) throws IOException {
-        List<String> list = getList(fileName);
+        List<String> list = ReadFile.getList(fileName);
         return (ArrayList<String>) list;
     }
 
@@ -96,11 +95,11 @@ public class OperateData {
     public ArrayList<String> getRepresentationTemplate(String format, String fileName, String countryName) throws IOException {
         ArrayList<Guest> guests = filterAsCountryName(fileName,countryName);
         ArrayList<String> list = new ArrayList<>();
-        if (format.equals("firstNameFirst")) {
+        if (format.contains("firstNameFirst")) {
             for (Guest guest : guests) {
-                list.add(guest.getInformalNameAndCountryTemplate());
+                list.add(guest.getFormalStructure());
             }
-        } else if (format.equals("lastNameFirst")) {
+        } else if (format.contains("lastNameFirst")) {
             for (Guest guest : guests) {
                 list.add(guest.getFormalStructure());
             }

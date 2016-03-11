@@ -1,6 +1,4 @@
-package com;
-
-import guest.*;
+package guest;
 
 public class GuestGenerator {
 
