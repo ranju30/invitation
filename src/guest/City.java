@@ -1,4 +1,4 @@
-package com;
+package guest;
 
 public class City {
     private String city;

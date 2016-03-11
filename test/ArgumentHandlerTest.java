@@ -24,6 +24,6 @@ public class ArgumentHandlerTest {
     public void testGetRepresentationShouldReturnRepresentationIfCountryIsGiven() throws Exception {
         ArgumentHandler argumentHandler = new ArgumentHandler(new String[]{"./data/sample.csv", "lastNameFirst","India"});
         ArrayList<String> representation = argumentHandler.getRepresentation();
-        assertEquals("Mr Kumar, Rito, India", representation.get(0));
+        assertEquals("+---------------+\n| Mr Rito Kumar |\n|---------------|\n| Hooghly, WB   |\n| India         |\n+---------------+", representation.get(0));
     }
 }

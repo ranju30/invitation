@@ -1,4 +1,4 @@
-package com;
+package guest;
 
 public class Country {
     private String country;

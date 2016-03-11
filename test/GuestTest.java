@@ -1,4 +1,4 @@
-import com.*;
+import guest.*;
 import org.junit.Before;
 import org.junit.Test;
 

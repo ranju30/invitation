@@ -1,4 +1,4 @@
-import com.Name;
+import guest.Name;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

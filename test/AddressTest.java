@@ -1,7 +1,7 @@
-import com.Address;
-import com.City;
-import com.Country;
-import com.State;
+import guest.Address;
+import guest.City;
+import guest.Country;
+import guest.State;
 import org.junit.Before;
 import org.junit.Test;
 

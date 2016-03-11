@@ -1,4 +1,4 @@
-import com.Guest;
+import guest.Guest;
 import com.GuestGenerator;
 import org.junit.Test;
 

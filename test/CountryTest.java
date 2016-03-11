@@ -1,4 +1,4 @@
-import com.Country;
+import guest.Country;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;

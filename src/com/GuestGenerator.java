@@ -1,5 +1,7 @@
 package com;
 
+import guest.*;
+
 public class GuestGenerator {
 
     public Guest getEachGuest(String[] array) {

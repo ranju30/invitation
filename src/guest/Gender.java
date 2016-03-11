@@ -1,4 +1,4 @@
-package com;
+package guest;
 
 public enum Gender {
     MALE("Mr"),
