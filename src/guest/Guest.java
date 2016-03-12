@@ -47,46 +47,59 @@ public class Guest {
         return String.format("%s %s, %s", gender, name.getFirstNameFirst(), address.getCountry());
     }
 
-    public String getFormalStructure(){
-        int nameLenght = name.getFirstNameFirst().length()+5;
-        int addressLength = address.getCity().length()+address.getState().length() +4;
-        int countryLength = address.getCountry().length()+2;
-        dashLength = getHighestLength(nameLenght,addressLength,countryLength);
+    public String getInformalStructure() {
+        int nameLenght = name.getFirstNameFirst().length() + 5;
+        int addressLength = address.getCity().length() + address.getState().length() + 4;
+        int countryLength = address.getCountry().length() + 2;
+        dashLength = getHighestLength(nameLenght, addressLength, countryLength);
         String s = "";
         s += getDash("+") + "\n";
-        s += "| " + gender + " " + name.getFirstNameFirst() +getSpace(nameLenght)+ " |" + "\n";
+        s += "| " + gender + " " + name.getFirstNameFirst() + getSpace(nameLenght) + " |" + "\n";
         s += getDash("|") + "\n";
-        s += "| " + address.getCity() + ", " + address.getState() + getSpace(addressLength)+" |" + "\n";
-        s += "| " +address.getCountry() + getSpace(countryLength) +" |" + "\n";
+        s += "| " + address.getCity() + ", " + address.getState() + getSpace(addressLength) + " |" + "\n";
+        s += "| " + address.getCountry() + getSpace(countryLength) + " |" + "\n";
+        s += getDash("+");
+        return s;
+    }
+
+    public String getFormalStructure() {
+        int nameLenght = name.getLastNameFirst().length() + 5;
+        int addressLength = address.getCity().length() + address.getState().length() + 4;
+        int countryLength = address.getCountry().length() + 2;
+        dashLength = getHighestLength(nameLenght, addressLength, countryLength);
+        String s = "";
+        s += getDash("+") + "\n";
+        s += "| " + gender + " " + name.getLastNameFirst() + getSpace(nameLenght) + " |" + "\n";
+        s += getDash("|") + "\n";
+        s += "| " + address.getCity() + ", " + address.getState() + getSpace(addressLength) + " |" + "\n";
+        s += "| " + address.getCountry() + getSpace(countryLength) + " |" + "\n";
         s += getDash("+");
         return s;
     }
 
     private int getHighestLength(int nameLenght, int addressLength, int countryLength) {
 
-        if(nameLenght > addressLength && nameLenght > countryLength){
+        if (nameLenght > addressLength && nameLenght > countryLength) {
             return nameLenght;
-        }
-        else if(addressLength > countryLength){
+        } else if (addressLength > countryLength) {
             return addressLength;
-        }
-        else
+        } else
             return countryLength;
     }
 
-    private String getSpace(int n){
+    private String getSpace(int n) {
         String space = "";
-        for(int i=0;i<dashLength-n;i++){
+        for (int i = 0; i < dashLength - n; i++) {
             space += " ";
         }
         return space;
     }
 
-    private String getDash(String symbol){
+    private String getDash(String symbol) {
         String dash = symbol;
-        for (int i=0;i<dashLength;i++){
+        for (int i = 0; i < dashLength; i++) {
             dash += "-";
         }
-        return dash+symbol;
+        return dash + symbol;
     }
 }

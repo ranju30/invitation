@@ -97,7 +97,7 @@ public class OperateData {
         ArrayList<String> list = new ArrayList<>();
         if (format.contains("firstNameFirst")) {
             for (Guest guest : guests) {
-                list.add(guest.getFormalStructure());
+                list.add(guest.getInformalStructure());
             }
         } else if (format.contains("lastNameFirst")) {
             for (Guest guest : guests) {
