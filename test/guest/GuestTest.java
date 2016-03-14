@@ -1,10 +1,12 @@
-import guest.*;
+package guest;
+
+import designs.NamingConvention;
 import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertFalse;
+import static junit.framework.TestCase.assertTrue;
 
 public class GuestTest {
 
@@ -25,12 +27,14 @@ public class GuestTest {
 
     @Test
     public void testGetFormalLegalGuest() throws Exception {
-        assertEquals("Mr Kumar, Rito, India, 22", rito.getFormalTemplate());
+        NamingConvention lastNameFirst = new NamingConvention("lastNameFirst");
+        assertEquals("Mr Kumar, Rito, India, 22", rito.getRepresentationWithCountryAndAge(lastNameFirst));
     }
 
     @Test
     public void testGetInformalLegalGuest() throws Exception {
-        assertEquals("Mr Rito Kumar, India, 22",rito.getInformalTemplate());
+        NamingConvention firstNameFirst = new NamingConvention("firstNameFirst");
+        assertEquals("Mr Rito Kumar, India, 22",rito.getRepresentationWithCountryAndAge(firstNameFirst));
     }
 
     @Test
@@ -38,6 +42,8 @@ public class GuestTest {
         assertTrue(rito.isFrom("India"));
         assertFalse(rito.isFrom("Pakistan"));
     }
+
+
 
     @Test
     public void testWheatherAgivenAgeIsLegalAccordingToCondition() throws Exception {
@@ -47,20 +53,24 @@ public class GuestTest {
 
     @Test
     public void test_getFormalNameTemplate() throws Exception {
-        assertEquals("Mr Kumar, Rito",rito.getFormalNameTemplate());
+        NamingConvention lastNameFirst = new NamingConvention("lastNameFirst");
+        assertEquals("Mr Kumar, Rito",rito.getName(lastNameFirst));
     }
 
     @Test
     public void test_getInformalNameTemplate() throws Exception {
-        assertEquals("Mr Rito Kumar",rito.getInformalNameTemplate());
+        NamingConvention firstNameFirst = new NamingConvention("firstNameFirst");
+        assertEquals("Mr Rito Kumar",rito.getName(firstNameFirst));
     }
 
     @Test
     public void testgetFormalNameCountryTemplate() throws Exception {
-        assertEquals("Mr Kumar, Rito, India",rito.getFormalNameCountryTemplate());
+        NamingConvention lastNameFirst = new NamingConvention("lastNameFirst");
+        assertEquals("Mr Kumar, Rito, India",rito.getNameAndCountry(lastNameFirst));
     }
     @Test
     public void testgetInformalNameCountryTemplate() throws Exception {
-        assertEquals("Mr Rito Kumar, India",rito.getInformalNameAndCountryTemplate());
+        NamingConvention firstNameFirst = new NamingConvention("firstNameFirst");
+        assertEquals("Mr Rito Kumar, India",rito.getNameAndCountry(firstNameFirst));
     }
 }

@@ -1,4 +1,5 @@
-import guest.Age;
+package guest;
+
 import org.junit.Test;
 
 import static junit.framework.Assert.assertFalse;

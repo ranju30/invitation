@@ -1,4 +1,5 @@
-import guest.Gender;
+package guest;
+
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

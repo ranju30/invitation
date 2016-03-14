@@ -1,7 +1,5 @@
-import guest.Address;
-import guest.City;
-import guest.Country;
-import guest.State;
+package guest;
+
 import org.junit.Before;
 import org.junit.Test;
 

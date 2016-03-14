@@ -1,20 +1,18 @@
 package guest;
 
+import designs.NamingConvention;
+
 public class Name {
 
     private String firstName;
     private String lastName;
 
-    public Name(String fName, String lName) {
-        this.firstName = fName;
-        this.lastName = lName;
+    public Name(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public String getFirstNameFirst() {
-        return String.format("%s %s", this.firstName, this.lastName);
-    }
-
-    public String getLastNameFirst() {
-        return String.format("%s, %s", this.lastName, this.firstName);
+    public String getNameRepresentation(NamingConvention format) {
+        return format.getNameRepresentation(firstName, lastName);
     }
 }
