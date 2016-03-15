@@ -5,7 +5,8 @@ import guest.Guest;
 import guest.GuestGenerator;
 import option.ArgumentHandler;
 import option.FilterData;
-import option.ReadFile;
+import readFile.ReadFile;
+import print.PrintGuest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,18 +19,13 @@ public class PrintLabels {
         String option = operateArguments.getOption();
         ArrayList<Filter> filter = operateArguments.getFilter();
 
-
         List<String> list = ReadFile.getList(fileName);
         ArrayList<Guest> guests = new GuestGenerator().generateGuest(list);
 
-        FilterData filterData = new FilterData();
-        ArrayList<Guest> filterdGuest = filterData.getFilterdGuest(guests, filter);
+        FilterData filterData = new FilterData(guests, filter);
+        ArrayList<Guest> filterdGuest = filterData.getFilterdGuest();
 
-        
-
-//        ArrayList<String> representation = operateArguments.getRepresentation();
-//        for (String guest : representation) {
-//            System.out.println(guest);
-//        }
+        PrintGuest printGuest = new PrintGuest(filterdGuest);
+        printGuest.print(option);
     }
 }

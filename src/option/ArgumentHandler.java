@@ -19,19 +19,19 @@ public class ArgumentHandler {
     }
 
     public String getOption() {
-        if(arguments[0].contains("l"))
-            return "lastNameFirst";
-        return "firstNameFirst";
+        if (arguments[0].contains("f"))
+            return "firstNameFirst";
+        return "lastNameFirst";
     }
 
     public ArrayList<Filter> getFilter() {
         ArrayList<Filter> filters = new ArrayList<>();
         for (int i = 0; i < arguments.length; i++) {
-            if(arguments[i].substring(0,2).equals("-a")){
+            if (arguments[i].substring(0, 2).equals("-a")) {
                 int givenAge = Integer.parseInt(arguments[i].substring(2));
                 filters.add(new AgeFilter(givenAge));
             }
-            if(arguments[i].substring(0,2).equals("-c")){
+            if (arguments[i].substring(0, 2).equals("-c")) {
                 String givenCountry = arguments[i].substring(2);
                 filters.add(new CountryFilter(givenCountry));
             }

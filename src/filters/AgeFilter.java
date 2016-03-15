@@ -7,7 +7,6 @@ public class AgeFilter implements Filter {
     private int givenAge;
 
     public AgeFilter(int givenAge) {
-
         this.givenAge = givenAge;
     }
 

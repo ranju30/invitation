@@ -1,4 +1,4 @@
-package option;
+package readFile;
 
 import java.io.File;
 import java.io.IOException;
