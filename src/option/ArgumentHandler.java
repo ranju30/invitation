@@ -1,53 +1,41 @@
 package option;
 
-import java.io.IOException;
+import filters.AgeFilter;
+import filters.CountryFilter;
+import filters.Filter;
+
 import java.util.ArrayList;
 
 public class ArgumentHandler {
     private String[] arguments;
-    private String fileName;
-    private String format;
-    private String countryName;
-    private String ageLimit;
 
     public ArgumentHandler(String[] args) {
         this.arguments = args;
-        this.fileName = args[0];
-        this.format = args[1];
     }
 
-
-    public ArrayList<String> getRepresentation() throws IOException {
-        OperateData operateData = new OperateData();
-        if (arguments.length == 3 && format.contains("WithPattern")) {
-            this.countryName = arguments[2];
-            return operateData.getRepresentationTemplate(format, fileName, countryName);
-        }
-        if (arguments.length == 3) {
-            this.countryName = arguments[2];
-            return operateData.getRepresentationWithCountryName(format, fileName, countryName);
-        }
-        if (arguments.length == 4) {
-            this.countryName = arguments[2];
-            this.ageLimit = arguments[3];
-            return operateData.getRepresentationWithLegalAge(format, fileName, countryName, ageLimit);
-        }
-            return operateData.getDataRepresentationForOnlyName(format, fileName);
-    }
 
     public String getFileName() {
-        return this.fileName;
+        return this.arguments[arguments.length - 1];
     }
 
-    public String[] getOptions(){
-        String[] options = new String[arguments.length-1];
-        for (int i = 2; i < arguments.length; i++) {
-            options[i-1] = arguments[i];
+    public String getOption() {
+        if(arguments[0].contains("l"))
+            return "lastNameFirst";
+        return "firstNameFirst";
+    }
+
+    public ArrayList<Filter> getFilter() {
+        ArrayList<Filter> filters = new ArrayList<>();
+        for (int i = 0; i < arguments.length; i++) {
+            if(arguments[i].substring(0,2).equals("-a")){
+                int givenAge = Integer.parseInt(arguments[i].substring(2));
+                filters.add(new AgeFilter(givenAge));
+            }
+            if(arguments[i].substring(0,2).equals("-c")){
+                String givenCountry = arguments[i].substring(2);
+                filters.add(new CountryFilter(givenCountry));
+            }
         }
-        return options;
-    }
-
-    public String getRepresentationFormat(){
-        return format;
+        return filters;
     }
 }
