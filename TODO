@@ -17,12 +17,20 @@ age
 -------------------------------------------------------------
 
 $ cat records
-Manisha,Roy,Female,19,Kolkata,WB,India
+Manisha,Roy,Female,19,Kolkata,WB,USA
 Ranju,Karmakar,Male,22,Bangalore,Karnataka,India
 
-$ sh run.sh records firstNameFirst India 20
+$ sh app.sh records firstNameFirst India 20
 Mr Ranju Karmakar, India, 22
 
+./app.sh data/records firstNameFirstWithPattern India
+
++----------------+
+| Mr Kumar, Rito |
+|----------------|
+| Hooghly, WB    |
+| India          |
++----------------+
 
 recognising Guest as an entity :
 firstName,lastName,gender,age,city,state,country

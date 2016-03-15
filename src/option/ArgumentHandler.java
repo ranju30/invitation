@@ -22,15 +22,32 @@ public class ArgumentHandler {
         if (arguments.length == 3 && format.contains("WithPattern")) {
             this.countryName = arguments[2];
             return operateData.getRepresentationTemplate(format, fileName, countryName);
-        } else if (arguments.length == 3) {
+        }
+        if (arguments.length == 3) {
             this.countryName = arguments[2];
             return operateData.getRepresentationWithCountryName(format, fileName, countryName);
-        } else if (arguments.length == 4) {
+        }
+        if (arguments.length == 4) {
             this.countryName = arguments[2];
             this.ageLimit = arguments[3];
             return operateData.getRepresentationWithLegalAge(format, fileName, countryName, ageLimit);
-        } else {
-            return operateData.getDataRepresentationForOnlyName(format, fileName);
         }
+            return operateData.getDataRepresentationForOnlyName(format, fileName);
+    }
+
+    public String getFileName() {
+        return this.fileName;
+    }
+
+    public String[] getOptions(){
+        String[] options = new String[arguments.length-1];
+        for (int i = 2; i < arguments.length; i++) {
+            options[i-1] = arguments[i];
+        }
+        return options;
+    }
+
+    public String getRepresentationFormat(){
+        return format;
     }
 }

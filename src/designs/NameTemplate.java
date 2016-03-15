@@ -1,9 +1,9 @@
 package designs;
 
-public class NamingConvention {
+public class NameTemplate {
     private String representationFormat;
 
-    public NamingConvention(String representation) {
+    public NameTemplate(String representation) {
         this.representationFormat = representation;
     }
 

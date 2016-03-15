@@ -1,5 +1,8 @@
 package guest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GuestGenerator {
 
     public Guest getEachGuest(String[] array) {
@@ -11,5 +14,14 @@ public class GuestGenerator {
         Country country = new Country(array[6]);
         Address address = new Address(city, state, country);
         return new Guest(name, gender, age, address);
+    }
+
+    public ArrayList<Guest> generateGuest(List<String> allDetail){
+        ArrayList<Guest> list = new ArrayList<>();
+        for (String eachData : allDetail) {
+            String[] array = eachData.split(",");
+            list.add(getEachGuest(array));
+        }
+        return list;
     }
 }

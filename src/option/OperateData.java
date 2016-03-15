@@ -2,7 +2,7 @@ package option;
 
 import designs.Designs;
 import designs.FirstDesign;
-import designs.NamingConvention;
+import designs.NameTemplate;
 import guest.Guest;
 import guest.GuestGenerator;
 
@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OperateData {
+
+
     private ArrayList<String> getData(String fileName) throws IOException {
         List<String> list = ReadFile.getList(fileName);
         return (ArrayList<String>) list;
@@ -53,7 +55,7 @@ public class OperateData {
     public ArrayList<String> getDataRepresentationForOnlyName(String format, String fileName) throws IOException {
         ArrayList<Guest> guests = createGuest(fileName);
         ArrayList<String> list = new ArrayList<>();
-        NamingConvention nameFormat = new NamingConvention(format);
+        NameTemplate nameFormat = new NameTemplate(format);
         for (Guest guest : guests) {
             list.add(guest.getName(nameFormat));
         }
@@ -63,7 +65,7 @@ public class OperateData {
     public ArrayList<String> getRepresentationWithCountryName(String format, String fileName, String countryName) throws IOException {
         ArrayList<Guest> guests = filterAsCountryName(fileName, countryName);
         ArrayList<String> list = new ArrayList<>();
-        NamingConvention nameFormat = new NamingConvention(format);
+        NameTemplate nameFormat = new NameTemplate(format);
         for (Guest guest : guests) {
             list.add(guest.getNameAndCountry(nameFormat));
         }
@@ -73,7 +75,7 @@ public class OperateData {
     public ArrayList<String> getRepresentationWithLegalAge(String format, String fileName, String countryName, String ageLimit) throws IOException {
         ArrayList<Guest> guests = filterWithCountryAndAge(fileName, countryName, ageLimit);
         ArrayList<String> list = new ArrayList<>();
-        NamingConvention nameFormat = new NamingConvention(format);
+        NameTemplate nameFormat = new NameTemplate(format);
         for (Guest guest : guests) {
             list.add(guest.getRepresentationWithCountryAndAge(nameFormat));
         }
@@ -84,10 +86,14 @@ public class OperateData {
         ArrayList<Guest> guests = filterAsCountryName(fileName, countryName);
         ArrayList<String> list = new ArrayList<>();
         Designs firstDesign = new FirstDesign();
-        NamingConvention nameFormat = new NamingConvention(format);
+        NameTemplate nameFormat = new NameTemplate(format);
         for (Guest guest : guests) {
             list.add(guest.getRepresentationWithStructure(firstDesign, nameFormat));
         }
         return list;
     }
+
+
+    public
+
 }

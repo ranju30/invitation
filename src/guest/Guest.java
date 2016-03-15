@@ -1,7 +1,7 @@
 package guest;
 
 import designs.Designs;
-import designs.NamingConvention;
+import designs.NameTemplate;
 
 public class Guest {
 
@@ -17,7 +17,7 @@ public class Guest {
         this.address = address;
     }
 
-    public String getRepresentationWithCountryAndAge(NamingConvention format) {
+    public String getRepresentationWithCountryAndAge(NameTemplate format) {
         return String.format("%s %s, %s, %s", gender, name.getNameRepresentation(format), address.getCountry(), age.getAge());
     }
 
@@ -29,15 +29,15 @@ public class Guest {
         return age.isLegal(givenAge);
     }
 
-    public String getName(NamingConvention format) {
+    public String getName(NameTemplate format) {
         return String.format("%s %s", gender, name.getNameRepresentation(format));
     }
 
-    public String getNameAndCountry(NamingConvention format) {
+    public String getNameAndCountry(NameTemplate format) {
         return String.format("%s %s, %s", gender, name.getNameRepresentation(format), address.getCountry());
     }
 
-    public String getRepresentationWithStructure(Designs design, NamingConvention format) {
+    public String getRepresentationWithStructure(Designs design, NameTemplate format) {
         String nameRepresentation = gender.toString() + " " + name.getNameRepresentation(format);
         String entityRepresentation = address.getCity() + ", " + address.getState() + "\n" + address.getCountry();
         return design.getDesign(nameRepresentation, entityRepresentation);
