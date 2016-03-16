@@ -16,7 +16,7 @@ public class GuestGenerator {
         return new Guest(name, gender, age, address);
     }
 
-    public ArrayList<Guest> generateGuest(List<String> allDetail){
+    public ArrayList<Guest> generateGuest(List<String> allDetail) {
         ArrayList<Guest> list = new ArrayList<>();
         for (String eachData : allDetail) {
             String[] array = eachData.split(",");

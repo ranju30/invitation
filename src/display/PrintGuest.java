@@ -10,7 +10,7 @@ public class PrintGuest {
 
     private ArrayList<Guest> guests = new ArrayList<>();
 
-    public PrintGuest(ArrayList<Guest> filteredGuest){
+    public PrintGuest(ArrayList<Guest> filteredGuest) {
         this.guests = filteredGuest;
     }
 
@@ -18,7 +18,7 @@ public class PrintGuest {
         FirstDesign firstDesign = new FirstDesign();
         NameTemplate format = new NameTemplate(option);
         for (Guest guest : guests) {
-            System.out.println(guest.getRepresentationWithStructure(firstDesign,format));
+            System.out.println(guest.getRepresentationWithStructure(firstDesign, format));
         }
     }
 }

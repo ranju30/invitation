@@ -26,19 +26,19 @@ public class Guest {
     }
 
     public String getName(NameTemplate format) {
-        return String.format("%s %s", gender, name.getNameRepresentation(format));
+        return String.format("%s %s", gender.title(), name.getNameRepresentation(format));
     }
 
     public String getNameAndCountry(NameTemplate format) {
-        return String.format("%s %s, %s", gender, name.getNameRepresentation(format), address.getCountry());
+        return String.format("%s %s, %s", gender.title(), name.getNameRepresentation(format), address.getCountry());
     }
 
     public String getRepresentationWithCountryAndAge(NameTemplate format) {
-        return String.format("%s %s, %s, %s", gender, name.getNameRepresentation(format), address.getCountry(), age.getAge());
+        return String.format("%s %s, %s, %s", gender.title(), name.getNameRepresentation(format), address.getCountry(), age.getAge());
     }
 
     public String getRepresentationWithStructure(Designs design, NameTemplate format) {
-        String nameRepresentation = gender.title() + " " + name.getNameRepresentation(format);
+        String nameRepresentation = this.getName(format);
         String entityRepresentation = address.getCity() + ", " + address.getState() + "\n" + address.getCountry();
         return design.getDesign(nameRepresentation, entityRepresentation);
     }

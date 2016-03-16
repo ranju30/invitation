@@ -15,7 +15,7 @@ public class AddressTest {
         City city = new City("Kolkata");
         State state = new State("WB");
         Country country = new Country("India");
-        address = new Address(city,state,country);
+        address = new Address(city, state, country);
     }
 
     @Test

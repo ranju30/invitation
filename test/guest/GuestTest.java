@@ -1,12 +1,12 @@
 package guest;
 
+import designs.FirstDesign;
 import designs.NameTemplate;
 import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.TestCase.*;
 
 public class GuestTest {
 
@@ -72,5 +72,18 @@ public class GuestTest {
     public void testgetInformalNameCountryTemplate() throws Exception {
         NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
         assertEquals("Mr Rito Kumar, India",rito.getNameAndCountry(firstNameFirst));
+    }
+
+    @Test
+    public void testGetRepresentationWithStructure() throws Exception {
+        FirstDesign firstDesign = new FirstDesign();
+        NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
+        String expected = "+---------------+\n"+
+                            "| Mr Rito Kumar |\n"+
+                            "|---------------|\n"+
+                            "| Kolkata, WB   |\n"+
+                            "| India         |\n"+
+                            "+---------------+";
+        assertEquals(rito.getRepresentationWithStructure(firstDesign,firstNameFirst),expected);
     }
 }
