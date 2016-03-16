@@ -3,8 +3,8 @@ package app;
 import filters.Filter;
 import guest.Guest;
 import guest.GuestGenerator;
-import option.ArgumentHandler;
-import option.FilterData;
+import argumentHandler.ArgumentHandler;
+import sortData.FilterData;
 import readFile.ReadFile;
 import print.PrintGuest;
 

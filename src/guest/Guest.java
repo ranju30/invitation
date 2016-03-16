@@ -17,10 +17,6 @@ public class Guest {
         this.address = address;
     }
 
-    public String getRepresentationWithCountryAndAge(NameTemplate format) {
-        return String.format("%s %s, %s, %s", gender, name.getNameRepresentation(format), address.getCountry(), age.getAge());
-    }
-
     public boolean isFrom(String countryName) {
         return address.isEqualWith(countryName);
     }
@@ -37,8 +33,12 @@ public class Guest {
         return String.format("%s %s, %s", gender, name.getNameRepresentation(format), address.getCountry());
     }
 
+    public String getRepresentationWithCountryAndAge(NameTemplate format) {
+        return String.format("%s %s, %s, %s", gender, name.getNameRepresentation(format), address.getCountry(), age.getAge());
+    }
+
     public String getRepresentationWithStructure(Designs design, NameTemplate format) {
-        String nameRepresentation = gender.toString() + " " + name.getNameRepresentation(format);
+        String nameRepresentation = gender.title() + " " + name.getNameRepresentation(format);
         String entityRepresentation = address.getCity() + ", " + address.getState() + "\n" + address.getCountry();
         return design.getDesign(nameRepresentation, entityRepresentation);
     }

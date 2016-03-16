@@ -1,4 +1,4 @@
-package option;
+package sortData;
 
 import filters.Filter;
 import guest.Guest;

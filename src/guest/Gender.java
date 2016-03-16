@@ -11,8 +11,7 @@ public enum Gender {
         this.prefix = prefix;
     }
 
-    @Override
-    public String toString() {
+    public String title() {
         return prefix;
     }
 }
