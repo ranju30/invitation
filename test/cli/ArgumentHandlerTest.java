@@ -1,4 +1,4 @@
-package argumentHandler;
+package cli;
 
 import filters.Filter;
 import org.junit.Test;

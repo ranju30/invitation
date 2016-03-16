@@ -3,10 +3,10 @@ package app;
 import filters.Filter;
 import guest.Guest;
 import guest.GuestGenerator;
-import argumentHandler.ArgumentHandler;
+import cli.ArgumentHandler;
 import sortData.FilterData;
-import readFile.ReadFile;
-import print.PrintGuest;
+import io.ReadFile;
+import display.PrintGuest;
 
 import java.io.IOException;
 import java.util.ArrayList;

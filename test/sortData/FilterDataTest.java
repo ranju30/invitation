@@ -1,6 +1,6 @@
 package sortData;
 
-import argumentHandler.ArgumentHandler;
+import cli.ArgumentHandler;
 import filters.Filter;
 import guest.Guest;
 import guest.GuestGenerator;

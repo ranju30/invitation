@@ -1,4 +1,4 @@
-package print;
+package display;
 
 import designs.FirstDesign;
 import designs.NameTemplate;
