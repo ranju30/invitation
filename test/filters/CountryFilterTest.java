@@ -15,7 +15,7 @@ public class CountryFilterTest {
     public void setUp() throws Exception {
         String[] array = {"Rito", "Kumar", "Male", "22", "Hooghly", "WB", "India"};
         GuestGenerator guestGenerator = new GuestGenerator();
-        guest = guestGenerator.getEachGuest(array);
+        guest = guestGenerator.createGuest(array);
     }
 
     @Test

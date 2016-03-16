@@ -14,18 +14,18 @@ import java.util.List;
 
 public class PrintLabels {
     public static void main(String[] args) throws IOException {
-        ArgumentHandler operateArguments = new ArgumentHandler(args);
-        String fileName = operateArguments.getFileName();
-        String option = operateArguments.getOption();
-        ArrayList<Filter> filter = operateArguments.getFilter();
+        ArgumentHandler argumentHandler = new ArgumentHandler(args);
+        String fileName = argumentHandler.getFileName();
+        String nameFormat = argumentHandler.getNameFormat();
+        ArrayList<Filter> filters = argumentHandler.getFilters();
 
         List<String> list = ReadFile.getList(fileName);
-        ArrayList<Guest> guests = new GuestGenerator().generateGuest(list);
+        ArrayList<Guest> guests = new GuestGenerator().generateGuestList(list);
 
-        FilterData filterData = new FilterData(guests, filter);
-        ArrayList<Guest> filterdGuest = filterData.getFilterdGuest();
+        FilterData filterData = new FilterData(filters);
+        ArrayList<Guest> filterdGuest = filterData.filter(guests);
 
         PrintGuest printGuest = new PrintGuest(filterdGuest);
-        printGuest.print(option);
+        printGuest.print(nameFormat);
     }
 }

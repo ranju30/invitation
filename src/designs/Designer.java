@@ -1,6 +1,6 @@
 package designs;
 
-public class FirstDesign implements Designs {
+public class Designer implements Designs {
 
     private String lineGenerator(int length, String borderSymbol, String centerSymbol) {
 

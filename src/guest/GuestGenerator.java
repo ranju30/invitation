@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GuestGenerator {
 
-    public Guest getEachGuest(String[] array) {
+    public Guest createGuest(String[] array) {
         Name name = new Name(array[0], array[1]);
         Gender gender = array[2].contains("Female") ? Gender.FEMALE : Gender.MALE;
         Age age = new Age(Integer.parseInt(array[3]));
@@ -16,11 +16,11 @@ public class GuestGenerator {
         return new Guest(name, gender, age, address);
     }
 
-    public ArrayList<Guest> generateGuest(List<String> allDetail) {
+    public ArrayList<Guest> generateGuestList(List<String> allDetail) {
         ArrayList<Guest> list = new ArrayList<>();
         for (String eachData : allDetail) {
             String[] array = eachData.split(",");
-            list.add(getEachGuest(array));
+            list.add(createGuest(array));
         }
         return list;
     }

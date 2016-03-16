@@ -1,5 +1,6 @@
 package guest;
 
+import designs.AddressTemplate;
 import designs.Designs;
 import designs.NameTemplate;
 
@@ -29,17 +30,10 @@ public class Guest {
         return String.format("%s %s", gender.title(), name.getNameRepresentation(format));
     }
 
-    public String getNameAndCountry(NameTemplate format) {
-        return String.format("%s %s, %s", gender.title(), name.getNameRepresentation(format), address.getCountry());
-    }
-
-    public String getRepresentationWithCountryAndAge(NameTemplate format) {
-        return String.format("%s %s, %s, %s", gender.title(), name.getNameRepresentation(format), address.getCountry(), age.getAge());
-    }
-
-    public String getRepresentationWithStructure(Designs design, NameTemplate format) {
+    public String represent(Designs design, NameTemplate format) {
+        AddressTemplate addressTemplate = new AddressTemplate();
         String nameRepresentation = this.getName(format);
-        String entityRepresentation = address.getCity() + ", " + address.getState() + "\n" + address.getCountry();
+        String entityRepresentation = address.getAddress(addressTemplate);
         return design.getDesign(nameRepresentation, entityRepresentation);
     }
 

@@ -12,21 +12,21 @@ public class ArgumentHandlerTest {
     public void testToGetTheNameFormatAccordicToTheInputWhenInputIsF() throws Exception {
         String[] args = {"-f", "-cIndia", "-a20", "data/records"};
         ArgumentHandler argumentHandler = new ArgumentHandler(args);
-        assertEquals("firstNameFirst", argumentHandler.getOption());
+        assertEquals("firstNameFirst", argumentHandler.getNameFormat());
     }
 
     @Test
     public void testToGetTheNameFormatAccordicToTheInputWhenInputIsL() throws Exception {
         String[] args = {"-l", "-cIndia", "-a20", "data/records"};
         ArgumentHandler argumentHandler = new ArgumentHandler(args);
-        assertEquals("lastNameFirst", argumentHandler.getOption());
+        assertEquals("lastNameFirst", argumentHandler.getNameFormat());
     }
 
     @Test
     public void testToGetFilterWhencountryNameIsGiven() throws Exception {
         String[] args = {"-f", "-cIndia", "-a20", "data/records"};
         ArgumentHandler argumentHandler = new ArgumentHandler(args);
-        ArrayList<Filter> filter = argumentHandler.getFilter();
+        ArrayList<Filter> filter = argumentHandler.getFilters();
         assertEquals(2, filter.size());
     }
 

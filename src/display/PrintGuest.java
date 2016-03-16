@@ -1,6 +1,6 @@
 package display;
 
-import designs.FirstDesign;
+import designs.Designer;
 import designs.NameTemplate;
 import guest.Guest;
 
@@ -15,10 +15,10 @@ public class PrintGuest {
     }
 
     public void print(String option) {
-        FirstDesign firstDesign = new FirstDesign();
+        Designer designer = new Designer();
         NameTemplate format = new NameTemplate(option);
         for (Guest guest : guests) {
-            System.out.println(guest.getRepresentationWithStructure(firstDesign, format));
+            System.out.println(guest.represent(designer, format));
         }
     }
 }

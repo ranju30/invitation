@@ -1,6 +1,6 @@
 package guest;
 
-import designs.FirstDesign;
+import designs.Designer;
 import designs.NameTemplate;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,17 +25,6 @@ public class GuestTest {
     }
 
 
-    @Test
-    public void testGetFormalLegalGuest() throws Exception {
-        NameTemplate lastNameFirst = new NameTemplate("lastNameFirst");
-        assertEquals("Mr Kumar, Rito, India, 22", rito.getRepresentationWithCountryAndAge(lastNameFirst));
-    }
-
-    @Test
-    public void testGetInformalLegalGuest() throws Exception {
-        NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
-        assertEquals("Mr Rito Kumar, India, 22", rito.getRepresentationWithCountryAndAge(firstNameFirst));
-    }
 
     @Test
     public void testToCheckAPersonIsFromACountry() throws Exception {
@@ -62,21 +51,10 @@ public class GuestTest {
         assertEquals("Mr Rito Kumar", rito.getName(firstNameFirst));
     }
 
-    @Test
-    public void testgetFormalNameCountryTemplate() throws Exception {
-        NameTemplate lastNameFirst = new NameTemplate("lastNameFirst");
-        assertEquals("Mr Kumar, Rito, India", rito.getNameAndCountry(lastNameFirst));
-    }
-
-    @Test
-    public void testgetInformalNameCountryTemplate() throws Exception {
-        NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
-        assertEquals("Mr Rito Kumar, India", rito.getNameAndCountry(firstNameFirst));
-    }
 
     @Test
     public void testGetRepresentationWithStructure() throws Exception {
-        FirstDesign firstDesign = new FirstDesign();
+        Designer designer = new Designer();
         NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
         String expected = "+---------------+\n" +
                 "| Mr Rito Kumar |\n" +
@@ -84,6 +62,6 @@ public class GuestTest {
                 "| Kolkata, WB   |\n" +
                 "| India         |\n" +
                 "+---------------+";
-        assertEquals(rito.getRepresentationWithStructure(firstDesign, firstNameFirst), expected);
+        assertEquals(rito.represent(designer, firstNameFirst), expected);
     }
 }

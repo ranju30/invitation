@@ -18,13 +18,13 @@ public class ArgumentHandler {
         return this.arguments[arguments.length - 1];
     }
 
-    public String getOption() {
+    public String getNameFormat() {
         if (arguments[0].contains("f"))
             return "firstNameFirst";
         return "lastNameFirst";
     }
 
-    public ArrayList<Filter> getFilter() {
+    public ArrayList<Filter> getFilters() {
         ArrayList<Filter> filters = new ArrayList<>();
         for (int i = 0; i < arguments.length; i++) {
             if (arguments[i].substring(0, 2).equals("-a")) {

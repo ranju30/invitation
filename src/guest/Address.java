@@ -1,5 +1,7 @@
 package guest;
 
+import designs.AddressTemplate;
+
 public class Address {
     private City city;
     private State state;
@@ -11,19 +13,11 @@ public class Address {
         this.country = country;
     }
 
-    public String getCountry() {
-        return country.getName();
-    }
-
     public Boolean isEqualWith(String anotherCountry) {
         return country.isEqual(anotherCountry);
     }
 
-    public String getCity() {
-        return city.getName();
-    }
-
-    public String getState() {
-        return state.getName();
+    public String getAddress(AddressTemplate addressTemplate) {
+        return addressTemplate.addressRepresentation(city.getName(), state.getName(), country.getName());
     }
 }
