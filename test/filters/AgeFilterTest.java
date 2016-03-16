@@ -10,9 +10,10 @@ import static org.junit.Assert.assertTrue;
 
 public class AgeFilterTest {
     private Guest guest;
+
     @Before
     public void setUp() throws Exception {
-        String[] array = {"Rito","Kumar","Male","22","Hooghly","WB","India"};
+        String[] array = {"Rito", "Kumar", "Male", "22", "Hooghly", "WB", "India"};
         GuestGenerator guestGenerator = new GuestGenerator();
         guest = guestGenerator.getEachGuest(array);
     }

@@ -20,7 +20,7 @@ public class GuestTest {
         City city = new City("Kolkata");
         State state = new State("WB");
         Country country = new Country("India");
-        Address address = new Address(city,state,country);
+        Address address = new Address(city, state, country);
         rito = new Guest(name, g, age, address);
     }
 
@@ -34,7 +34,7 @@ public class GuestTest {
     @Test
     public void testGetInformalLegalGuest() throws Exception {
         NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
-        assertEquals("Mr Rito Kumar, India, 22",rito.getRepresentationWithCountryAndAge(firstNameFirst));
+        assertEquals("Mr Rito Kumar, India, 22", rito.getRepresentationWithCountryAndAge(firstNameFirst));
     }
 
     @Test
@@ -42,7 +42,6 @@ public class GuestTest {
         assertTrue(rito.isFrom("India"));
         assertFalse(rito.isFrom("Pakistan"));
     }
-
 
 
     @Test
@@ -54,36 +53,37 @@ public class GuestTest {
     @Test
     public void test_getFormalNameTemplate() throws Exception {
         NameTemplate lastNameFirst = new NameTemplate("lastNameFirst");
-        assertEquals("Mr Kumar, Rito",rito.getName(lastNameFirst));
+        assertEquals("Mr Kumar, Rito", rito.getName(lastNameFirst));
     }
 
     @Test
     public void test_getInformalNameTemplate() throws Exception {
         NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
-        assertEquals("Mr Rito Kumar",rito.getName(firstNameFirst));
+        assertEquals("Mr Rito Kumar", rito.getName(firstNameFirst));
     }
 
     @Test
     public void testgetFormalNameCountryTemplate() throws Exception {
         NameTemplate lastNameFirst = new NameTemplate("lastNameFirst");
-        assertEquals("Mr Kumar, Rito, India",rito.getNameAndCountry(lastNameFirst));
+        assertEquals("Mr Kumar, Rito, India", rito.getNameAndCountry(lastNameFirst));
     }
+
     @Test
     public void testgetInformalNameCountryTemplate() throws Exception {
         NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
-        assertEquals("Mr Rito Kumar, India",rito.getNameAndCountry(firstNameFirst));
+        assertEquals("Mr Rito Kumar, India", rito.getNameAndCountry(firstNameFirst));
     }
 
     @Test
     public void testGetRepresentationWithStructure() throws Exception {
         FirstDesign firstDesign = new FirstDesign();
         NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
-        String expected = "+---------------+\n"+
-                            "| Mr Rito Kumar |\n"+
-                            "|---------------|\n"+
-                            "| Kolkata, WB   |\n"+
-                            "| India         |\n"+
-                            "+---------------+";
-        assertEquals(rito.getRepresentationWithStructure(firstDesign,firstNameFirst),expected);
+        String expected = "+---------------+\n" +
+                "| Mr Rito Kumar |\n" +
+                "|---------------|\n" +
+                "| Kolkata, WB   |\n" +
+                "| India         |\n" +
+                "+---------------+";
+        assertEquals(rito.getRepresentationWithStructure(firstDesign, firstNameFirst), expected);
     }
 }
