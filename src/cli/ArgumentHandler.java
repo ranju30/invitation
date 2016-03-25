@@ -27,12 +27,12 @@ public class ArgumentHandler {
     public ArrayList<Filter> getFilters() {
         ArrayList<Filter> filters = new ArrayList<>();
         for (int i = 0; i < arguments.length; i++) {
-            if (arguments[i].substring(0, 2).equals("-a")) {
-                int givenAge = Integer.parseInt(arguments[i].substring(2));
+            if (arguments[i].equals("-a")) {
+                int givenAge = Integer.parseInt(arguments[++i]);
                 filters.add(new AgeFilter(givenAge));
             }
-            if (arguments[i].substring(0, 2).equals("-c")) {
-                String givenCountry = arguments[i].substring(2);
+            if (arguments[i].equals("-c")) {
+                String givenCountry = arguments[++i];
                 filters.add(new CountryFilter(givenCountry));
             }
         }

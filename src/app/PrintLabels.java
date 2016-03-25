@@ -23,9 +23,9 @@ public class PrintLabels {
         ArrayList<Guest> guests = new GuestGenerator().generateGuestList(list);
 
         FilterData filterData = new FilterData(filters);
-        ArrayList<Guest> filterdGuest = filterData.filter(guests);
+        ArrayList<Guest> filteredGuest = filterData.filter(guests);
 
-        PrintGuest printGuest = new PrintGuest(filterdGuest);
+        PrintGuest printGuest = new PrintGuest(filteredGuest);
         printGuest.print(nameFormat);
     }
 }

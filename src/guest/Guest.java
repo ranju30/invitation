@@ -36,6 +36,4 @@ public class Guest {
         String entityRepresentation = address.getAddress(addressTemplate);
         return design.getDesign(nameRepresentation, entityRepresentation);
     }
-
-
 }

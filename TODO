@@ -20,10 +20,8 @@ $ cat records
 Manisha,Roy,Female,19,Kolkata,WB,USA
 Ranju,Karmakar,Male,22,Bangalore,Karnataka,India
 
-$ sh app.sh -f -cIndia -a20 data/records
-Mr Ranju Karmakar, India, 22
 
-./app.sh -lp -cIndia data/records
+./app.sh -f -c "India" -a 20 data/records
 
 +----------------+
 | Mr Kumar, Rito |
