@@ -20,6 +20,7 @@ public class Designer implements Designs {
         return addressLength2;
     }
 
+    @Override
     public String getDesign(String nameRepresentation, String entitiesRepresentation) {
         String representation = "";
         String firstAddress = entitiesRepresentation.split("\n")[0];
