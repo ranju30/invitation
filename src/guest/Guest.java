@@ -34,16 +34,4 @@ public class Guest {
         String entityRepresentation = address.getAddress(addressTemplate);
         return design.getDesign(nameRepresentation, entityRepresentation);
     }
-
-
-//    public String representDetail(Designer designer, NameConvention nameFormater) {
-//        AddressTemplate addressTemplate = new AddressTemplate();
-//        String nameRepresent = this.getNameRepresent(nameFormater);
-//        String entityRepresentation = address.getAddress(addressTemplate);
-//        return designer.getDesign(nameRepresent,entityRepresentation);
-//    }
-
-//    private String getNameRepresent(NameConvention nameFormater) {
-//        return String.format("%s %s", gender.title(),name.getRepresentation(nameFormater));
-//    }
 }

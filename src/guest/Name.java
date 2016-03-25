@@ -15,8 +15,4 @@ public class Name {
     public String getNameRepresentation(NameConvention nameFormat) {
         return nameFormat.getNameRepresentation(firstName, lastName);
     }
-
-//    public String getRepresentation(NameConvention nameFormater) {
-//        return nameFormater.getNameRepresentation(firstName,lastName);
-//    }
 }
