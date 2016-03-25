@@ -1,5 +1,8 @@
 package cli;
 
+import designs.FirstNameFirst;
+import designs.LastNameFirst;
+import designs.NameConvention;
 import filters.AgeFilter;
 import filters.CountryFilter;
 import filters.Filter;
@@ -18,22 +21,22 @@ public class ArgumentHandler {
         return this.arguments[arguments.length - 1];
     }
 
-    public String getNameFormat() {
+    public NameConvention getNameFormat() {
         if (arguments[0].contains("f"))
-            return "firstNameFirst";
-        return "lastNameFirst";
+            return new FirstNameFirst();
+        return new LastNameFirst();
     }
 
     public ArrayList<Filter> getFilters() {
         ArrayList<Filter> filters = new ArrayList<>();
         for (int i = 0; i < arguments.length; i++) {
-            if (arguments[i].equals("-a")) {
-                int givenAge = Integer.parseInt(arguments[++i]);
-                filters.add(new AgeFilter(givenAge));
-            }
             if (arguments[i].equals("-c")) {
                 String givenCountry = arguments[++i];
                 filters.add(new CountryFilter(givenCountry));
+            }
+            if (arguments[i].equals("-a")) {
+                int givenAge = Integer.parseInt(arguments[++i]);
+                filters.add(new AgeFilter(givenAge));
             }
         }
         return filters;

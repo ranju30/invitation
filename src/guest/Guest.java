@@ -1,8 +1,6 @@
 package guest;
 
-import designs.AddressTemplate;
-import designs.Designs;
-import designs.NameTemplate;
+import designs.*;
 
 public class Guest {
 
@@ -26,14 +24,26 @@ public class Guest {
         return age.isLegal(givenAge);
     }
 
-    public String getName(NameTemplate format) {
-        return String.format("%s %s", gender.title(), name.getNameRepresentation(format));
+    public String getName(NameConvention nameFormat) {
+        return String.format("%s %s", gender.title(), name.getNameRepresentation(nameFormat));
     }
 
-    public String represent(Designs design, NameTemplate format) {
+    public String represent(Designs design, NameConvention nameFormat) {
         AddressTemplate addressTemplate = new AddressTemplate();
-        String nameRepresentation = this.getName(format);
+        String nameRepresentation = this.getName(nameFormat);
         String entityRepresentation = address.getAddress(addressTemplate);
         return design.getDesign(nameRepresentation, entityRepresentation);
     }
+
+
+//    public String representDetail(Designer designer, NameConvention nameFormater) {
+//        AddressTemplate addressTemplate = new AddressTemplate();
+//        String nameRepresent = this.getNameRepresent(nameFormater);
+//        String entityRepresentation = address.getAddress(addressTemplate);
+//        return designer.getDesign(nameRepresent,entityRepresentation);
+//    }
+
+//    private String getNameRepresent(NameConvention nameFormater) {
+//        return String.format("%s %s", gender.title(),name.getRepresentation(nameFormater));
+//    }
 }

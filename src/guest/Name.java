@@ -1,6 +1,6 @@
 package guest;
 
-import designs.NameTemplate;
+import designs.NameConvention;
 
 public class Name {
 
@@ -12,7 +12,11 @@ public class Name {
         this.lastName = lastName;
     }
 
-    public String getNameRepresentation(NameTemplate format) {
-        return format.getNameRepresentation(firstName, lastName);
+    public String getNameRepresentation(NameConvention nameFormat) {
+        return nameFormat.getNameRepresentation(firstName, lastName);
     }
+
+//    public String getRepresentation(NameConvention nameFormater) {
+//        return nameFormater.getNameRepresentation(firstName,lastName);
+//    }
 }

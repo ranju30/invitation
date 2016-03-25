@@ -23,14 +23,14 @@ public class FilterDataTest {
         guests.add(generator.createGuest(new String[]{"Gavin", "Hyatt", "Male", "36", "Crooks ton", "Illinois", "Romania"}));
         guests.add(generator.createGuest(new String[]{"Carlos", "Johns", "Male", "35", "West Shanna", "South Carolina", "Bangladesh"}));
         guests.add(generator.createGuest(new String[]{"Brandt", "Huel", "Female", "25", "West Shanna", "Illinois", "Macedonia"}));
-        String[] args = {"-f", "-cBan", "-a20", "data/records"};
+        String[] args = {"-f", "-c", "Ban", "-a", "20", "data/records"};
         ArgumentHandler argumentHandler = new ArgumentHandler(args);
         filters = argumentHandler.getFilters();
     }
 
     @Test
     public void testToGetGuestsAccordingToTheCondition() throws Exception {
-        String[] args = {"-f", "-cMacedonia", "-a15"};
+        String[] args = {"-f", "-c", "Macedonia", "-a", "15"};
         ArgumentHandler argumentHandler = new ArgumentHandler(args);
         filters = argumentHandler.getFilters();
         FilterData filterData = new FilterData(filters);

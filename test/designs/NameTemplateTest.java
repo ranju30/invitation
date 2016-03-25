@@ -7,13 +7,13 @@ import static junit.framework.TestCase.assertEquals;
 public class NameTemplateTest {
     @Test
     public void testToCheckForFormalName() throws Exception {
-        NameTemplate lastNameFirst = new NameTemplate("lastNameFirst");
+        LastNameFirst lastNameFirst = new LastNameFirst();
         assertEquals(lastNameFirst.getNameRepresentation("Rito", "Kumar"), "Kumar, Rito");
     }
 
     @Test
     public void testToCheckForInformalName() throws Exception {
-        NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
+        FirstNameFirst firstNameFirst = new FirstNameFirst();
         assertEquals(firstNameFirst.getNameRepresentation("Rito", "Kumar"), "Rito Kumar");
     }
 }

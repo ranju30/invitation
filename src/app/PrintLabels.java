@@ -1,5 +1,6 @@
 package app;
 
+import designs.NameConvention;
 import filters.Filter;
 import guest.Guest;
 import guest.GuestGenerator;
@@ -16,7 +17,7 @@ public class PrintLabels {
     public static void main(String[] args) throws IOException {
         ArgumentHandler argumentHandler = new ArgumentHandler(args);
         String fileName = argumentHandler.getFileName();
-        String nameFormat = argumentHandler.getNameFormat();
+        NameConvention nameFormat = argumentHandler.getNameFormat();
         ArrayList<Filter> filters = argumentHandler.getFilters();
 
         List<String> list = ReadFile.getList(fileName);

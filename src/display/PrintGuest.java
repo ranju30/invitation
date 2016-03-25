@@ -1,7 +1,7 @@
 package display;
 
 import designs.Designer;
-import designs.NameTemplate;
+import designs.NameConvention;
 import guest.Guest;
 
 import java.util.ArrayList;
@@ -14,11 +14,10 @@ public class PrintGuest {
         this.guests = filteredGuest;
     }
 
-    public void print(String option) {
+    public void print(NameConvention nameFormat) {
         Designer designer = new Designer();
-        NameTemplate format = new NameTemplate(option);
         for (Guest guest : guests) {
-            System.out.println(guest.represent(designer, format));
+            System.out.println(guest.represent(designer, nameFormat));
         }
     }
 }

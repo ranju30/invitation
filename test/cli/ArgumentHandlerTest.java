@@ -9,22 +9,8 @@ import static junit.framework.TestCase.assertEquals;
 
 public class ArgumentHandlerTest {
     @Test
-    public void testToGetTheNameFormatAccordicToTheInputWhenInputIsF() throws Exception {
-        String[] args = {"-f", "-cIndia", "-a20", "data/records"};
-        ArgumentHandler argumentHandler = new ArgumentHandler(args);
-        assertEquals("firstNameFirst", argumentHandler.getNameFormat());
-    }
-
-    @Test
-    public void testToGetTheNameFormatAccordicToTheInputWhenInputIsL() throws Exception {
-        String[] args = {"-l", "-cIndia", "-a20", "data/records"};
-        ArgumentHandler argumentHandler = new ArgumentHandler(args);
-        assertEquals("lastNameFirst", argumentHandler.getNameFormat());
-    }
-
-    @Test
-    public void testToGetFilterWhencountryNameIsGiven() throws Exception {
-        String[] args = {"-f", "-cIndia", "-a20", "data/records"};
+    public void testToGetFilterWhenCountryNameIsGiven() throws Exception {
+        String[] args = {"-f", "-c", "India", "-a","20", "data/records"};
         ArgumentHandler argumentHandler = new ArgumentHandler(args);
         ArrayList<Filter> filter = argumentHandler.getFilters();
         assertEquals(2, filter.size());
@@ -32,7 +18,7 @@ public class ArgumentHandlerTest {
 
     @Test
     public void testGetFileName() throws Exception {
-        String[] args = {"-l", "-cIndia", "-a20", "data/records"};
+        String[] args = {"-l", "-c", "India", "-a","20", "data/records"};
         ArgumentHandler argumentHandler = new ArgumentHandler(args);
         assertEquals("data/records", argumentHandler.getFileName());
     }

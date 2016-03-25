@@ -1,7 +1,6 @@
 package guest;
 
-import designs.Designer;
-import designs.NameTemplate;
+import designs.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -41,27 +40,32 @@ public class GuestTest {
 
     @Test
     public void test_getFormalNameTemplate() throws Exception {
-        NameTemplate lastNameFirst = new NameTemplate("lastNameFirst");
-        assertEquals("Mr Kumar, Rito", rito.getName(lastNameFirst));
+        NameConvention nameFormat = new LastNameFirst();
+//        NameTemplate lastNameFirst = new NameTemplate("lastNameFirst");
+        assertEquals("Mr Kumar, Rito", rito.getName(nameFormat));
     }
 
     @Test
     public void test_getInformalNameTemplate() throws Exception {
-        NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
-        assertEquals("Mr Rito Kumar", rito.getName(firstNameFirst));
+        NameConvention nameFormat = new FirstNameFirst();
+
+//        NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
+        assertEquals("Mr Rito Kumar", rito.getName(nameFormat));
     }
 
 
     @Test
     public void testGetRepresentationWithStructure() throws Exception {
         Designer designer = new Designer();
-        NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
+        NameConvention nameFormat = new FirstNameFirst();
+
+//        NameTemplate firstNameFirst = new NameTemplate("firstNameFirst");
         String expected = "+---------------+\n" +
                 "| Mr Rito Kumar |\n" +
                 "|---------------|\n" +
                 "| Kolkata, WB   |\n" +
                 "| India         |\n" +
                 "+---------------+";
-        assertEquals(rito.represent(designer, firstNameFirst), expected);
+        assertEquals(rito.represent(designer, nameFormat), expected);
     }
 }
