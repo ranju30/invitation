@@ -26,7 +26,7 @@ public class ArgumentHandler {
         HashMap<String,NameConvention> nameFormator = new HashMap<>();
         nameFormator.put("-f",new FirstNameFirst());
         nameFormator.put("-l",new LastNameFirst());
-        return nameFormator.get(arguments[1]);
+        return nameFormator.get(arguments[0]);
     }
 
     public ArrayList<Filter> getFilters() {
