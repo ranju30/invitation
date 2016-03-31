@@ -8,6 +8,7 @@ import filters.CountryFilter;
 import filters.Filter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ArgumentHandler {
     private String[] arguments;
@@ -22,9 +23,10 @@ public class ArgumentHandler {
     }
 
     public NameConvention getNameFormat() {
-        if (arguments[0].contains("f"))
-            return new FirstNameFirst();
-        return new LastNameFirst();
+        HashMap<String,NameConvention> nameFormator = new HashMap<>();
+        nameFormator.put("-f",new FirstNameFirst());
+        nameFormator.put("-l",new LastNameFirst());
+        return nameFormator.get(arguments[1]);
     }
 
     public ArrayList<Filter> getFilters() {
